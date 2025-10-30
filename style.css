@@ -1,0 +1,307 @@
+/* -------------------- 1. Global & Utility Styles -------------------- */
+
+:root {
+    /* Colors based on your Canva design with plain black background */
+    --color-bg: #000000;         /* Plain Black Background */
+    --color-text: #FFFFFF;       /* White Text */
+    --color-highlight: #A020F0;  /* A purplish-white for subtle accent */
+    --color-section-bg: #111111; /* Slightly off-black for card separation */
+    --color-line: #FFFFFF;       /* White line for the heading */
+    --font-family: 'Neue Machina', sans-serif; /* Your specified font */
+    --navbar-height: 80px;       /* Fixed height for desktop navbar */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Desktop/Default Scroll Padding: Stops scrolling exactly below the fixed navbar */
+    scroll-padding-top: var(--navbar-height); 
+}
+
+body {
+    /* --- DEFINITIVE GRADIENT APPLICATION --- */
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Neue Machina', Arial, sans-serif; 
+    line-height: 1.6;
+    min-height: 100vh;
+    color: var(--color-text);
+}
+
+a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-highlight);
+}
+
+/* Common style for section titles */
+.section-title {
+    font-size: 3em; 
+    margin-bottom: 50px;
+    color: var(--color-text);
+    text-align: center;
+    font-weight: 900; 
+}
+
+
+/* -------------------- 2. Navigation Bar -------------------- */
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    backdrop-filter: blur(8px); /* Blur effect */
+    -webkit-backdrop-filter: blur(8px);
+    
+    padding: 20px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links li a {
+    color: var(--color-text);
+    padding: 5px 10px;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-highlight);
+}
+
+
+/* -------------------- 3. Home Section -------------------- */
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: calc(var(--navbar-height) + 50px); 
+    padding-bottom: 100px;
+    
+    /* CRITICAL: Removed all background properties here */
+    background-color: transparent; 
+}
+
+.main-heading {
+    font-size: 5em;
+    margin-bottom: 15px;
+    color: var(--color-text);
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.heading-line {
+    width: 350px;
+    height: 3px;
+    background-color: var(--color-line);
+    border: none;
+    margin-bottom: 30px;
+}
+
+.sub-text {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: var(--color-text);
+    line-height: 1.4;
+    text-transform: uppercase;
+    max-width: 800px;
+}
+
+
+/* -------------------- 4. Generic Section Styling -------------------- */
+
+.page-section {
+    padding: 100px 5%;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(50,0,50,0.5) 100%);
+    background-color: var(--color-bg); 
+}
+
+.page-section:last-of-type {
+    border-bottom: none;
+}
+
+
+/* -------------------- 5. About & Skills Section -------------------- */
+
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    text-align: center;
+}
+/* ... (rest of about/skills content styles) ... */
+
+
+/* -------------------- 6. Gallery Section -------------------- */
+.project-grid {
+    display: grid;
+    /* This ensures 3 columns on desktop, responsive down to 280px wide cards */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project-item {
+    background-color: #222; 
+    border-radius: 8px;
+    overflow: hidden;
+
+}
+.project-item img {
+    /* CRITICAL: Ensures the image never exceeds the width of its container (280px on desktop, 100% on mobile) */
+    width: 100%; 
+    
+    /* Set a consistent height for all images to maintain a uniform look in the grid */
+    height: 200px; 
+    
+    /* CRITICAL: This crops the image to fit the 200px height without stretching it */
+    object-fit: cover; 
+    
+    display: block;
+}
+
+
+
+/* -------------------- 7. Contact Section Styles -------------------- */
+
+.contact-section {
+    /* This section must also be transparent to show the body gradient */
+    background-color: transparent; 
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background-color: #222; /* CRITICAL: Explicitly set dark background */
+    color: var(--color-text); /* CRITICAL: Explicitly set white text color */
+    font-size: 1em;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5); 
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-highlight);
+    box-shadow: 0 0 0 2px rgba(160, 32, 240, 0.5); /* Glowing border on focus */
+    outline: none;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 40px;
+    background-color: var(--color-section-bg); /* Ensure the form *container* stands out */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Find and UPDATE the existing .submit-btn style */
+.submit-btn {
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: var(--color-highlight); /* Highlight color for button */
+    color: var(--color-text);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    /* Add a subtle initial shadow to make it lift from the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+}
+
+/* Update the submit button hover effect */
+.submit-btn:hover {
+    background-color: #8a00d8; /* Slightly darker highlight on hover */
+    transform: translateY(-3px); /* Make it lift a little higher */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6); /* More pronounced shadow on hover */
+}
+
+/* Update the existing .social-icons .icon style */
+.social-icons .icon {
+    width: 32px; /* Reduced from 36px */
+    height: 32px; /* Set the size of the icon */
+    max-width: 100%; /* Ensures they don't stretch */
+}
+
+
+
+
+
+/* -------------------- 8. Footer -------------------- */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--color-section-bg); /* Footer needs a solid color */
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+
+/* -------------------- 9. RESPONSIVENESS (Media Queries) -------------------- */
+
+@media screen and (max-width: 768px) {
+    /* === Scroll Fix for TALL Mobile Navbar === */
+    html {
+        scroll-padding-top: 180px; 
+    }
+    
+
+    
+    .hero-section {
+        padding-top: 200px; 
+    }
+    
+.nav-links {
+    gap: 5px; /* Squeezing links closer */
+    padding: 0 10px; /* Adding slight horizontal padding to the list container */
+}
+
+.nav-links li a {
+    font-size: 0.75em; /* Make them even smaller to guarantee fit */
+    padding: 3px 3px; 
+    max-width: 80px; 
+}
+}
