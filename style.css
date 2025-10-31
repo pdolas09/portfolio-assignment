@@ -142,7 +142,13 @@ a:hover {
     text-transform: uppercase;
     max-width: 800px;
 }
-
+.hero-illustration {
+    /* Set a reasonable size for desktop */
+    width: 200px; 
+    height: auto;
+    margin-top: 40px; /* Space it out from the text above */
+    opacity: 0.8; /* Slight transparency to make it subtle */
+}
 
 /* -------------------- 4. Generic Section Styling -------------------- */
 
@@ -362,6 +368,10 @@ footer {
     .hero-section {
         padding-top: 200px; 
     }
+    .hero-illustration {
+        width: 150px; /* Make it smaller on mobile */
+        margin-top: 30px; 
+    }
     
 .nav-links {
     gap: 5px; /* Squeezing links closer */
@@ -380,6 +390,7 @@ footer {
     
     
 }
+
 
 
 
