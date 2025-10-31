@@ -170,6 +170,63 @@ a:hover {
     font-size: 1.1em;
     text-align: center;
 }
+.skills-grid-container {
+    /* Use CSS Grid to create a 2-column layout for the categories */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 40px; /* Space between the columns */
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.skill-category {
+    padding: 20px;
+    background-color: var(--color-section-bg); /* Use a slight background for the category card */
+    border-radius: 8px;
+}
+
+.skill-category h3 {
+    font-size: 1.6em;
+    color: var(--color-highlight);
+    margin-bottom: 25px;
+    text-align: center; /* Center the category title */
+}
+
+.skill-badges {
+    display: flex;
+    flex-wrap: wrap; /* Allows badges to wrap to the next line */
+    gap: 10px; /* Space between individual badges */
+    justify-content: center; /* Center the badges within the category card */
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 20px; /* Rounded corners for the badge look */
+    font-size: 0.9em;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Specific styling for technical skills */
+.badge.tech {
+    background-color: #333333; /* Dark gray background */
+    color: var(--color-text);
+    border: 1px solid #555;
+}
+
+/* Specific styling for soft skills */
+.badge.soft {
+    background-color: var(--color-highlight); /* Highlight background */
+    color: var(--color-bg); /* Dark text for contrast */
+}
+
+.badge:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
 /* ... (rest of about/skills content styles) ... */
 
 
@@ -316,7 +373,13 @@ footer {
     padding: 3px 3px; 
     max-width: 80px; 
 }
-
+.skills-grid-container {
+        /* Stack the categories vertically on small screens */
+        grid-template-columns: 1fr; 
+    }
+    
+    
 }
+
 
 
