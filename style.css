@@ -98,7 +98,7 @@ a:hover {
 /* -------------------- 3. Home Section -------------------- */
 
 .highlight-text {
-    color: var(--color-highlight); 
+    color: var(--color-highlight) !important; 
 }
 
 .hero-section {
@@ -310,3 +310,4 @@ footer {
 }
 
 }
+
