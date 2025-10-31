@@ -97,6 +97,10 @@ a:hover {
 
 /* -------------------- 3. Home Section -------------------- */
 
+.highlight-text {
+    color: var(--color-highlight); 
+}
+
 .hero-section {
     min-height: 100vh;
     display: flex;
@@ -304,4 +308,5 @@ footer {
     padding: 3px 3px; 
     max-width: 80px; 
 }
+
 }
