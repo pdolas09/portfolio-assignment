@@ -86,12 +86,14 @@ a:hover {
     font-size: 1.1em;
     font-weight: 700;
     text-transform: uppercase;
-    transition: color 0.3s, background-color 0.3s;
+    transition: color 0.3s, background-color 0.3s, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--color-highlight);
+    border-bottom: 2px solid var(--color-highlight);
 }
 
 
@@ -184,7 +186,13 @@ a:hover {
     background-color: #222; 
     border-radius: 8px;
     overflow: hidden;
+}
 
+
+.project-item:hover {
+    transform: translateY(-8px);
+    /* Change the shadow color to your highlight color (A020F0) */
+    box-shadow: 0 10px 20px rgba(160, 32, 240, 0.4); 
 }
 .project-item img {
     /* CRITICAL: Ensures the image never exceeds the width of its container (280px on desktop, 100% on mobile) */
@@ -310,4 +318,5 @@ footer {
 }
 
 }
+
 
